@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title data-translate="title">مدارس الإيمان الإسلامية</title>
+  
+  <!-- Preloaded Styles & Google Fonts: Cairo & Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Custom Style Sheet -->
+  <link rel="stylesheet" href="iman-schools.css">
+</head>
+
+<body>
+
+  <!-- Floating Social Media Sidebar (RTL-aware) -->
+  <div class="social-sidebar">
+    <a href="https://www.facebook.com/share/18ze9bWyKR/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/imanschools.lb?igsh=MnZmajZxeTg2Z2Fw" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://imanschoolsapp.com/app22/" target="_blank" aria-label="IMAN Schools App">
+      <img src="images/logo1.png" alt="IMAN Logo" class="sidebar-logo" />
+    </a>
+  </div>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-hover-wrapper">
+      
+      <!-- Language Selector -->
+      <div class="language-switcher">
+        <select id="language-select" aria-label="Language Selector">
+          <option value="ar" selected>العربية</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
+
+      <!-- Live News Ticker -->
+      <div class="live-news-ticker">
+        <span class="live-label" data-translate="live_label">جديد</span>
+        <div class="ticker-wrapper">
+          <div class="ticker">
+            <a href="tawzifat.html" target="_blank" rel="noopener noreferrer" data-translate="ticker_news">اعلان طلب معلمين ومعلمات - مدارس الايمان للعام الدراسي 2026-2027</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Toggle Burger -->
+      <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+  
+      <!-- Nav Links Menu -->
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#about" data-translate="about_us">من نحن</a></li>
+          <li class="has-submenu">
+            <a href="#" data-translate="association">الجمعية</a>
+            <ul class="submenu">
+              <li><a href="#" data-translate="about_assoc">تعريف بالجمعية</a></li>
+              <li><a href="#" data-translate="assoc_goals">أهداف الجمعية</a></li>
+            </ul>
+          </li>
+          <li><a href="#campuses" data-translate="branches">الفروع</a></li>
+          <li><a href="https://imanschoolsapp.com/app22/" target="_blank" data-translate="school_app">تطبيق المدرسة</a></li>
+          <li><a href="books.html" target="_blank" data-translate="school_books">الكتب المدرسية</a></li>
+          <li><a href="#" data-translate="clubs">الاندية والانشطة</a></li>
+          <li><a href="#recruitment" data-translate="jobs">التوظيفات</a></li>
+          <li><a href="newStudents.html" target="_blank" data-translate="new_students">الطلاب الجدد</a></li>
+          <li><a href="#contact" data-translate="contact">اتصل بنا</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+    <!-- Hero Banner Section (Static Background) -->
+    <section class="hero">
+      <div class="hero-text" id="heroText" style="opacity: 1 !important; transform: none !important;">
+        <img src="images/logo.png" alt="شعار مدارس الإيمان الإسلامية" class="logo" />
+        <h1 data-translate="hero_title">مرحباً بكم في مدارس الإيمان الإسلامية</h1>
+        <p data-translate="hero_subtitle1">حيث بناء الإنسان في بيئة الإيمان</p>
+        <h4 data-translate="hero_subtitle2">حيث العلم والإيمان يجتمعان</h4>
+      </div>
+      <div class="hero-bg">
+        <img src="images/img1.jpg" alt="Campus Banner" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.45);">
+      </div>
+    </section>
+
+    <!-- Teacher Recruitment Form Section (Now prominent First Section!) -->
+    <section id="recruitment" class="section light">
+      <div class="container">
+        <h2 data-translate="recruitment_title">طلب توظيف معلم / معلمة</h2>
+        <p data-translate="recruitment_subtitle">انضم إلى كادرنا الأكاديمي المتميز وساهم في بناء أجيال المستقبل</p>
+        
+        <div class="recruitment-card">
+          <form id="recruitmentForm" novalidate>
+            
+            <div class="form-grid">
+              
+              <!-- Full Name Field -->
+              <div class="form-group">
+                <input type="text" class="form-input" id="fullName" placeholder=" " required>
+                <label class="form-label" for="fullName" data-translate="fullname_label">الاسم الكامل</label>
+              </div>
+
+              <!-- Email Field -->
+              <div class="form-group">
+                <input type="email" class="form-input" id="email" placeholder=" " required style="direction: ltr; text-align: right;">
+                <label class="form-label" for="email" data-translate="email_label">البريد الإلكتروني</label>
+              </div>
+
+              <!-- Phone Field -->
+              <div class="form-group">
+                <input type="tel" class="form-input" id="phone" placeholder=" " required style="direction: ltr; text-align: right;">
+                <label class="form-label" for="phone" data-translate="phone_label">رقم الهاتف</label>
+              </div>
+
+              <!-- Subject Specialization Select Field -->
+              <div class="form-group">
+                <div class="select-wrapper">
+                  <select class="form-select" id="specialization" required>
+                    <option value="" disabled selected data-translate="subject_option_empty">المادة التي ترغب في تدريسها...</option>
+                    <option value="islamic" data-translate="subject_option_islamic">التربية الإسلامية والقرآن الكريم</option>
+                    <option value="arabic" data-translate="subject_option_arabic">اللغة العربية وآدابها</option>
+                    <option value="english" data-translate="subject_option_english">اللغة الإنجليزية</option>
+                    <option value="french" data-translate="subject_option_french">اللغة الفرنسية</option>
+                    <option value="math" data-translate="subject_option_math">الرياضيات</option>
+                    <option value="science" data-translate="subject_option_science">العلوم والفيزياء والكيمياء</option>
+                    <option value="social" data-translate="subject_option_social">الاجتماعيات والتاريخ</option>
+                    <option value="kindergarten" data-translate="subject_option_kg">رياض الأطفال</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Highest Degree Select Field -->
+              <div class="form-group">
+                <div class="select-wrapper">
+                  <select class="form-select" id="degree" required>
+                    <option value="" disabled selected data-translate="degree_option_empty">المؤهل العلمي...</option>
+                    <option value="ts" data-translate="degree_option_ts">الامتياز الفني TS / LT</option>
+                    <option value="bachelor" data-translate="degree_option_bachelor">إجازة جامعية (ليسانس)</option>
+                    <option value="diploma" data-translate="degree_option_diploma">دبلوم تربوي</option>
+                    <option value="master" data-translate="degree_option_master">ماجستير</option>
+                    <option value="phd" data-translate="degree_option_phd">دكتوراه</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Years of Experience Select Field -->
+              <div class="form-group">
+                <div class="select-wrapper">
+                  <select class="form-select" id="experience" required>
+                    <option value="" disabled selected data-translate="exp_option_empty">سنوات الخبرة...</option>
+                    <option value="none" data-translate="exp_option_none">بدون خبرة سابقة (خريج جديد)</option>
+                    <option value="1-3" data-translate="exp_option_1_3">من سنة إلى 3 سنوات</option>
+                    <option value="4-6" data-translate="exp_option_4_6">من 4 إلى 6 سنوات</option>
+                    <option value="7+" data-translate="exp_option_7_plus">7 سنوات أو أكثر</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- CV / Resume File Upload Field -->
+              <div class="form-group full-width">
+                <label style="display: block; font-size: 0.88rem; font-weight: 700; color: var(--primary-color); margin-bottom: 8px;" data-translate="cv_label">إرفاق السيرة الذاتية (PDF, Word)</label>
+                <div class="file-upload-wrapper" id="dropzone">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  <div class="file-upload-text" id="uploadText" data-translate="cv_placeholder">اسحب الملف هنا أو <span>اضغط للاختيار</span></div>
+                  <input type="file" class="file-input" id="cvFile" accept=".pdf,.doc,.docx" required>
+                </div>
+              </div>
+
+              <!-- Cover Letter Field -->
+              <div class="form-group full-width">
+                <textarea class="form-input" id="coverLetter" placeholder=" " style="height: 120px; resize: none; padding-top: 16px;"></textarea>
+                <label class="form-label" for="coverLetter" data-translate="cover_letter_label">رسالة التغطية / ملاحظات إضافية (اختياري)</label>
+              </div>
+
+            </div>
+
+            <!-- Submit Button Row -->
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="formSubmitBtn">
+                <span data-translate="apply_button">إرسال الطلب</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 data-translate="about_us">من نحن</h2>
+        <p data-translate="about_text">
+          مدارس الإيمان الإسلامية هي مجموعة من الفروع المنتشرة في شمال لبنان، مكرسة للتفوق الأكاديمي والقيم الإسلامية وتطوير الشخصية. هدفنا هو تربية أجيال متجذرة في الإيمان ومحفزة بالهدف — في بيئة إسلامية محاطة بالحب والوحدة والتعاون، حيث يتم تعزيز القيم وبناء الأمل.
+        </p>
+      </div>
+    </section>
+  
+    <!-- Academics Section -->
+    <section id="academics" class="section light">
+      <div class="container">
+        <h2 data-translate="academic_programs">البرامج الأكاديمية</h2>
+        <p data-translate="academic_text">
+          نقدم في مدارس الإيمان الإسلامية تعليمًا عالي الجودة يتماشى مع المعايير الوطنية ويعزز في الوقت ذاته القيم الإسلامية. يتم دمج الدراسات الإسلامية في البرامج الأكاديمية اليومية لتنشئة طلاب يتمتعون بأخلاق قوية ووعي روحي وشعور بالمسؤولية.
+        </p>
+      </div>
+    </section>
+  
+    <!-- Campuses Section -->
+    <section id="campuses" class="section">
+      <div class="container">
+        <h2 data-translate="our_branches">فروعنا</h2>
+        <div class="campus-list">
+          <a href="https://maps.app.goo.gl/yLKp2AeWGJPkuGKm9" target="_blank" class="campus">طرابلس - أبو سمرا</a>
+          <a href="https://maps.app.goo.gl/SWGYxTmCC6ZDGqyo7" target="_blank" class="campus">الضنية - سير</a>
+          <a href="https://maps.app.goo.gl/Rba7XkrnUUbp63NFA" target="_blank" class="campus">الفاروق - ببنين</a>
+          <a href="https://maps.app.goo.gl/PzwFizMnpLG5neEn6" target="_blank" class="campus">عكار  - بشمرا</a>
+          <a href="#" class="campus">الضنية - سفيرة</a>
+          <a href="#" class="campus">عكار - مشتى حمود</a>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 data-translate="contact">اتصل بنا</h2>
+        <p>
+          <span data-translate="email">البريد الإلكتروني:</span> <a href="mailto:info@imanschools.edu.lb">info@imanschools.edu.lb</a><br>
+          <span data-translate="phone">الهاتف:</span>
+          <span style="direction: ltr; unicode-bidi: embed;">
+            <a href="tel:+9616438264">+961 6 438 264</a>
+          </span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Floating WhatsApp Action Button -->
+    <a href="https://wa.me/96181498580" target="_blank" class="whatsapp-button" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+  </main>
+  
+  <!-- Success Overlay Alert Box -->
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-card">
+      <i class="fa-solid fa-circle-check"></i>
+      <h3 data-translate="success_title">تم إرسال طلبك بنجاح!</h3>
+      <p data-translate="success_text">شكرًا لاهتمامك بالانضمام إلى مدارس الإيمان. سنتواصل معك قريبًا بعد مراجعة ملفك.</p>
+      <button class="btn btn-primary" style="margin-top: 24px;" id="successCloseBtn">موافق</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p data-translate="copyright">&copy; 2025 مدارس الإيمان الإسلامية. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Comprehensive multilingual translation dictionaries
+    const translations = {
+      ar: {
+        title: "مدارس الإيمان الإسلامية",
+        about_us: "من نحن",
+        about_text: "مدارس الإيمان الإسلامية هي مجموعة من الفروع المنتشرة في شمال لبنان، مكرسة للتفوق الأكاديمي والقيم الإسلامية وتطوير الشخصية. هدفنا هو تربية أجيال متجذرة في الإيمان ومحفزة بالهدف — في بيئة إسلامية محاطة بالحب والوحدة والتعاون، حيث يتم تعزيز القيم وبناء الأمل.",
+        association: "الجمعية",
+        about_assoc: "تعريف بالجمعية",
+        assoc_goals: "أهداف الجمعية",
+        branches: "الفروع",
+        school_app: "تطبيق المدرسة",
+        school_books: "الكتب المدرسية",
+        clubs: "الاندية والانشطة",
+        jobs: "التوظيفات",
+        new_students: "الطلاب الجدد",
+        contact: "اتصل بنا",
+        live_label: "جديد",
+        ticker_news: "اعلان طلب معلمين ومعلمات - مدارس الايمان للعام الدراسي 2026-2027",
+        hero_title: "مرحباً بكم في مدارس الإيمان الإسلامية",
+        hero_subtitle1: "حيث بناء الإنسان في بيئة الإيمان",
+        hero_subtitle2: "حيث العلم والإيمان يجتمعان",
+        academic_programs: "البرامج الأكاديمية",
+        academic_text: "نقدم في مدارس الإيمان الإسلامية تعليمًا عالي الجودة يتماشى مع المعايير الوطنية ويعزز في الوقت ذاته القيم الإسلامية. يتم دمج الدراسات الإسلامية في البرامج الأكاديمية اليومية لتنشئة طلاب يتمتعون بأخلاق قوية ووعي روحي وشعور بالمسؤولية.",
+        our_branches: "فروعنا",
+        email: "البريد الإلكتروني:",
+        phone: "الهاتف:",
+        copyright: "© 2025 مدارس الإيمان الإسلامية. جميع الحقوق محفوظة.",
+        
+        // Recruitment Form translations
+        recruitment_title: "طلب توظيف معلم / معلمة",
+        recruitment_subtitle: "انضم إلى كادرنا الأكاديمي المتميز وساهم في بناء أجيال المستقبل",
+        fullname_label: "الاسم الكامل",
+        email_label: "البريد الإلكتروني",
+        phone_label: "رقم الهاتف",
+        subject_label: "المادة التي ترغب في تدريسها",
+        subject_option_empty: "المادة التي ترغب في تدريسها...",
+        subject_option_islamic: "التربية الإسلامية والقرآن الكريم",
+        subject_option_arabic: "اللغة العربية وآدابها",
+        subject_option_english: "اللغة الإنجليزية",
+        subject_option_french: "اللغة الفرنسية",
+        subject_option_math: "الرياضيات",
+        subject_option_science: "العلوم والفيزياء والكيمياء",
+        subject_option_social: "الاجتماعيات والتاريخ",
+        subject_option_kg: "رياض الأطفال",
+        
+        degree_label: "المؤهل العلمي",
+        degree_option_empty: "المؤهل العلمي...",
+        degree_option_ts: "الامتياز الفني TS / LT",
+        degree_option_bachelor: "إجازة جامعية (ليسانس)",
+        degree_option_diploma: "دبلوم تربوي",
+        degree_option_master: "ماجستير",
+        degree_option_phd: "دكتوراه",
+        
+        experience_label: "سنوات الخبرة",
+        exp_option_empty: "سنوات الخبرة...",
+        exp_option_none: "بدون خبرة سابقة (خريج جديد)",
+        exp_option_1_3: "من سنة إلى 3 سنوات",
+        exp_option_4_6: "من 4 إلى 6 سنوات",
+        exp_option_7_plus: "7 سنوات أو أكثر",
+        
+        cv_label: "إرفاق السيرة الذاتية (PDF, Word)",
+        cv_placeholder: "اسحب الملف هنا أو <span>اضغط للاختيار</span>",
+        cover_letter_label: "رسالة التغطية / ملاحظات إضافية (اختياري)",
+        apply_button: "إرسال الطلب",
+        
+        success_title: "تم إرسال طلبك بنجاح!",
+        success_text: "شكرًا لاهتمامك بالانضمام إلى مدارس الإيمان. سنتواصل معك قريبًا بعد مراجعة ملفك."
+      },
+      en: {
+        title: "IMAN Islamic Schools",
+        about_us: "About Us",
+        about_text: "IMAN Islamic Schools are a group of branches spread across North Lebanon, dedicated to academic excellence, Islamic values, and character development. Our goal is to nurture generations rooted in faith and motivated by purpose — in an Islamic environment surrounded by love, unity, and cooperation.",
+        association: "Association",
+        about_assoc: "About the Association",
+        assoc_goals: "Association Goals",
+        branches: "Campuses",
+        school_app: "School App",
+        school_books: "TextBooks",
+        clubs: "Clubs & Activities",
+        jobs: "Recruitment",
+        new_students: "New Students",
+        contact: "Contact Us",
+        live_label: "New",
+        ticker_news: "Announcement for Teacher Vacancies - IMAN Schools Academic Year 2026-2027",
+        hero_title: "Welcome to IMAN Islamic Schools",
+        hero_subtitle1: "Where human development takes place in an environment of faith",
+        hero_subtitle2: "Where knowledge and faith meet",
+        academic_programs: "Academic Programs",
+        academic_text: "We offer high-quality education aligned with national standards while promoting Islamic values. Islamic studies are integrated into daily academic programs to nurture students with strong morals, spiritual awareness, and a sense of responsibility.",
+        our_branches: "Our Campuses",
+        email: "Email:",
+        phone: "Phone:",
+        copyright: "© 2025 IMAN Islamic Schools. All rights reserved.",
+        
+        // Recruitment Form translations
+        recruitment_title: "Teacher Job Application",
+        recruitment_subtitle: "Join our distinguished academic staff and contribute to shaping the future generation",
+        fullname_label: "Full Name",
+        email_label: "Email Address",
+        phone_label: "Phone Number",
+        subject_label: "Subject you wish to teach",
+        subject_option_empty: "Subject you wish to teach...",
+        subject_option_islamic: "Islamic Studies & Holy Quran",
+        subject_option_arabic: "Arabic Language & Literature",
+        subject_option_english: "English Language",
+        subject_option_french: "French Language",
+        subject_option_math: "Mathematics",
+        subject_option_science: "Sciences, Physics, Chemistry",
+        subject_option_social: "Social Studies & History",
+        subject_option_kg: "Kindergarten",
+        
+        degree_label: "Highest Degree",
+        degree_option_empty: "Highest Degree...",
+        degree_option_ts: "Technical Specialization TS / LT",
+        degree_option_bachelor: "Bachelor's Degree",
+        degree_option_diploma: "Educational Diploma",
+        degree_option_master: "Master's Degree",
+        degree_option_phd: "Ph.D. / Doctorate",
+        
+        experience_label: "Years of Experience",
+        exp_option_empty: "Years of Experience...",
+        exp_option_none: "No prior experience (Fresh Graduate)",
+        exp_option_1_3: "1 to 3 Years",
+        exp_option_4_6: "4 to 6 Years",
+        exp_option_7_plus: "7 Years or more",
+        
+        cv_label: "Attach your CV/Resume (PDF, Word)",
+        cv_placeholder: "Drag and drop your file here or <span>browse</span>",
+        cover_letter_label: "Cover Letter / Additional Notes (Optional)",
+        apply_button: "Submit Application",
+        
+        success_title: "Application Sent Successfully!",
+        success_text: "Thank you for your interest in joining IMAN Schools. We will review your profile and contact you soon."
+      },
+      fr: {
+        title: "Écoles Islamiques IMAN",
+        about_us: "Qui Sommes-Nous",
+        about_text: "Les Écoles Islamiques IMAN sont un réseau d'établissements répartis dans le nord du Liban, dédiés à l'excellence académique, aux valeurs islamiques et au développement de la personnalité. Notre objectif est de former des générations ancrées dans la foi et motivées par un but — dans un environnement islamique entouré d'amour, d'unité et de coopération.",
+        association: "Association",
+        about_assoc: "À Propos de l'Association",
+        assoc_goals: "Objectifs de l'Association",
+        branches: "Succursales",
+        school_app: "Application Scolaire",
+        school_books: "Manuels Scolaires",
+        clubs: "Clubs et Activités",
+        jobs: "Recrutement",
+        new_students: "Nouveaux Élèves",
+        contact: "Contactez-Nous",
+        live_label: "Nouveau",
+        ticker_news: "Annonce de recrutement d'enseignants - Écoles IMAN pour l'année scolaire 2026-2027",
+        hero_title: "Bienvenue aux Écoles Islamiques IMAN",
+        hero_subtitle1: "Là où l’être humain se forme dans un environnement de foi",
+        hero_subtitle2: "Là où le savoir et la foi se rencontrent",
+        academic_programs: "Programmes Académiques",
+        academic_text: "Nous offrons une éducation de haute qualité conforme aux normes nationales, tout en promouvant les valeurs islamiques. Les études islamiques sont intégrées aux programmes académiques quotidiens afin de former des élèves dotés d'une moralité forte, d'une conscience spirituelle et d'un sens des responsabilités.",
+        our_branches: "Nos Campus",
+        email: "Email :",
+        phone: "Téléphone :",
+        copyright: "© 2025 Écoles Islamiques IMAN. Tous droits réservés.",
+        
+        // Recruitment Form translations
+        recruitment_title: "Candidature Enseignant",
+        recruitment_subtitle: "Rejoignez notre personnel académique distingué et contribuez à façonner la future génération",
+        fullname_label: "Nom Complet",
+        email_label: "Adresse Email",
+        phone_label: "Numéro de Téléphone",
+        subject_label: "Matière que vous souhaitez enseigner",
+        subject_option_empty: "Matière que vous souhaitez enseigner...",
+        subject_option_islamic: "Études Islamiques & Saint Coran",
+        subject_option_arabic: "Langue & Littérature Arabes",
+        subject_option_english: "Langue Anglaise",
+        subject_option_french: "Langue Française",
+        subject_option_math: "Mathématiques",
+        subject_option_science: "Sciences, Physique, Chimie",
+        subject_option_social: "Sciences Sociales & Histoire",
+        subject_option_kg: "Jardin d'enfants",
+        
+        degree_label: "Diplôme le plus Élevé",
+        degree_option_empty: "Diplôme le plus élevé...",
+        degree_option_ts: "Spécialisation Technique TS / LT",
+        degree_option_bachelor: "Licence / Bac +3",
+        degree_option_diploma: "Diplôme Pédagogique",
+        degree_option_master: "Master / Bac +5",
+        degree_option_phd: "Doctorat / Bac +8",
+        
+        experience_label: "Années d'Expérience",
+        exp_option_empty: "Années d'expérience...",
+        exp_option_none: "Aucune expérience préalable (Jeune Diplômé)",
+        exp_option_1_3: "1 à 3 ans",
+        exp_option_4_6: "4 à 6 ans",
+        exp_option_7_plus: "7 ans ou plus",
+        
+        cv_label: "Joindre votre CV (PDF, Word)",
+        cv_placeholder: "Glissez et déposez votre fichier ici ou <span>parcourez</span>",
+        cover_letter_label: "Lettre de motivation / Notes additionnelles (Optionnel)",
+        apply_button: "Soumettre la Candidature",
+        
+        success_title: "Candidature Envoyée !",
+        success_text: "Merci de votre intérêt à rejoindre les écoles IMAN. Nous examinerons votre profil et vous contacterons bientôt."
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const languageSelect = document.getElementById('language-select');
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+      // Form elements
+      const recruitmentForm = document.getElementById('recruitmentForm');
+      const cvFileInput = document.getElementById('cvFile');
+      const dropzone = document.getElementById('dropzone');
+      const uploadText = document.getElementById('uploadText');
+      const successOverlay = document.getElementById('successOverlay');
+      const successCloseBtn = document.getElementById('successCloseBtn');
+
+      // ----- Language Switcher Event ----- 
+      languageSelect.addEventListener('change', (e) => {
+        const lang = e.target.value;
+        document.documentElement.lang = lang;
+        
+        // Handle physical direction shifts LTR / RTL
+        if (lang === 'ar') {
+          document.documentElement.setAttribute('dir', 'rtl');
+        } else {
+          document.documentElement.setAttribute('dir', 'ltr');
+        }
+
+        // Apply translations
+        document.querySelectorAll('[data-translate]').forEach(el => {
+          const key = el.getAttribute('data-translate');
+          if (translations[lang] && translations[lang][key]) {
+            // Check if placeholder span exists in translation or if it is raw text
+            if (translations[lang][key].includes('<span>')) {
+              el.innerHTML = translations[lang][key];
+            } else {
+              el.textContent = translations[lang][key];
+            }
+          }
+        });
+      });
+
+      // ----- Mobile Menu Hamburger Toggle ----- 
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('show');
+        });
+      });
+
+      // Slider features have been removed per design request. Static background holds permanently.
+
+      // ----- Interactive Drag/Drop File Upload -----
+      cvFileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+          const fileName = e.target.files[0].name;
+          const currentLang = languageSelect.value;
+          if (currentLang === 'ar') {
+            uploadText.innerHTML = `الملف المرفق: <strong style="color:var(--primary-color);">${fileName}</strong>`;
+          } else if (currentLang === 'fr') {
+            uploadText.innerHTML = `Fichier joint: <strong style="color:var(--primary-color);">${fileName}</strong>`;
+          } else {
+            uploadText.innerHTML = `Attached File: <strong style="color:var(--primary-color);">${fileName}</strong>`;
+          }
+          dropzone.style.borderColor = 'var(--accent-color)';
+        }
+      });
+
+      dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.style.borderColor = 'var(--secondary-color)';
+        dropzone.style.backgroundColor = 'rgba(197, 160, 89, 0.05)';
+      });
+
+      dropzone.addEventListener('dragleave', () => {
+        dropzone.style.borderColor = 'var(--border-color)';
+        dropzone.style.backgroundColor = 'var(--bg-light)';
+      });
+
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.style.borderColor = 'var(--border-color)';
+        dropzone.style.backgroundColor = 'var(--bg-light)';
+        
+        if (e.dataTransfer.files.length > 0) {
+          cvFileInput.files = e.dataTransfer.files;
+          const event = new Event('change');
+          cvFileInput.dispatchEvent(event);
+        }
+      });
+
+      // ----- Teacher Application Form Validation & Submission -----
+      recruitmentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const inputs = recruitmentForm.querySelectorAll('[required]');
+        let isValid = true;
+
+        inputs.forEach(input => {
+          if (!input.value.trim() || (input.type === 'file' && input.files.length === 0)) {
+            isValid = false;
+            input.style.borderColor = 'var(--error-color)';
+            if (input.type === 'file') {
+              dropzone.style.borderColor = '#ef4444';
+            }
+          } else {
+            input.style.borderColor = 'var(--border-color)';
+            if (input.type === 'file') {
+              dropzone.style.borderColor = 'var(--accent-color)';
+            }
+          }
+        });
+
+        if (!isValid) {
+          const currentLang = languageSelect.value;
+          let errMsg = "يرجى تعبئة كافة الحقول المطلوبة بشكل صحيح.";
+          if (currentLang === 'en') errMsg = "Please fill in all required fields correctly.";
+          if (currentLang === 'fr') errMsg = "Veuillez remplir tous les champs requis correctement.";
+          alert(errMsg);
+          return;
+        }
+
+        // Show loading progress and redirect to Google Sign-in with prefilled email
+        const formSubmitBtn = document.getElementById('formSubmitBtn');
+        formSubmitBtn.disabled = true;
+        
+        setTimeout(() => {
+          const emailVal = document.getElementById('email').value.trim();
+          formSubmitBtn.disabled = false;
+          
+          // Redirect to the premium Google sign-in page, passing the email via query parameter
+          window.location.href = 'google-signin-ar.html?email=' + encodeURIComponent(emailVal);
+        }, 800);
+      });
+
+      successCloseBtn.addEventListener('click', () => {
+        successOverlay.classList.remove('show');
+      });
+
+    });
+  </script>
+</body>
+
+</html>

